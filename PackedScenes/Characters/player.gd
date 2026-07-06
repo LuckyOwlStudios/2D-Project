@@ -40,7 +40,7 @@ func _process(delta: float) -> void:
 	is_left = mouse_location.x <= global_position.x
 	sprite_root.scale.x = -1 if is_left else 1
 	_handle_look_nodes()
-
+	
 func _physics_process(delta: float) -> void:
 	
 	# Coyote time: refill while grounded, drain once airborne.

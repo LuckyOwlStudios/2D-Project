@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cyftgfviauafs"]
+
+[ext_resource type="Script" uid="uid://j4abn1l7f413" path="res://PackedScenes/Guns/bullet.gd" id="1_u8jni"]
+[ext_resource type="Texture2D" uid="uid://cigj1muw4hi5m" path="res://Assets/Sprites/Objects/Guns/placeholder_bullet.png" id="2_pdrxm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(4, 3)
+
+[node name="Bullet" type="Node2D" unique_id=1430276042]
+script = ExtResource("1_u8jni")
+bullet_speed = 500.0
+
+[node name="BulletSprite2D" type="Sprite2D" parent="." unique_id=725986326]
+texture = ExtResource("2_pdrxm")
+
+[node name="HitBox" type="Area2D" parent="." unique_id=684126036]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=973236675]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_g4v7s")
