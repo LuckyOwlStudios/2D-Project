@@ -11,10 +11,10 @@ script = ExtResource("1_u8jni")
 bullet_speed = 500.0
 
 [node name="BulletSprite2D" type="Sprite2D" parent="." unique_id=725986326]
+position = Vector2(0, 0.5)
 texture = ExtResource("2_pdrxm")
 
 [node name="HitBox" type="Area2D" parent="." unique_id=684126036]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=973236675]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_g4v7s")
