@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://ctjdjyfi0fqat"]
 
 [ext_resource type="Script" uid="uid://k3l6g5h8my8g" path="res://PackedScenes/Characters/player.gd" id="1_nnvau"]
-[ext_resource type="Texture2D" uid="uid://23elltl0o3i0" path="res://Assets/Sprites/Characters/Player/player.png" id="2_nnvau"]
+[ext_resource type="Texture2D" uid="uid://dus126x1aaoqn" path="res://Assets/Sprites/Characters/Player/head_mannequin.png" id="2_nnvau"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
 radius = 6.0
 
-[node name="Player" type="CharacterBody2D" unique_id=715250926]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yf5fn"]
+size = Vector2(8, 16)
+
+[node name="Player" type="CharacterBody2D" unique_id=715250926 node_paths=PackedStringArray("look_nodes")]
 script = ExtResource("1_nnvau")
+look_nodes = [NodePath("SpriteRoot/Body/HeadSprite2D")]
 metadata/_custom_type_script = "uid://k3l6g5h8my8g"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1070317002]
@@ -15,18 +19,16 @@ position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_g4v7s")
 
 [node name="Center" type="Marker2D" parent="." unique_id=381725886]
-
-[node name="RayCast2D" type="RayCast2D" parent="Center" unique_id=202079978]
-unique_name_in_owner = true
-
-[node name="Head" type="Marker2D" parent="." unique_id=738229267]
+position = Vector2(0, -15)
 
 [node name="SpriteRoot" type="Node2D" parent="." unique_id=292007718]
 
-[node name="Body" type="AnimatedSprite2D" parent="SpriteRoot" unique_id=1881699547]
+[node name="Body" type="Sprite2D" parent="SpriteRoot" unique_id=1696570150]
+position = Vector2(0, -14)
+texture = SubResource("PlaceholderTexture2D_yf5fn")
 
-[node name="Sprite2D" type="Sprite2D" parent="SpriteRoot" unique_id=1742906777]
-position = Vector2(0, -16)
+[node name="HeadSprite2D" type="Sprite2D" parent="SpriteRoot/Body" unique_id=175440773]
+position = Vector2(0, -12)
 texture = ExtResource("2_nnvau")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=374340496]
