@@ -24,6 +24,7 @@ enum POS_STATE {
 @onready var sprite_root: Node2D = $SpriteRoot
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var center: Marker2D = $Center
+@onready var ground_ray_cast: RayCast2D = $GroundRayCast2D
 
 ## Grace period (seconds) after leaving a ledge where a jump still counts.
 var coyote_time: float = 0.1
@@ -32,8 +33,9 @@ var _coyote_timer: float = 0.0
 var is_left: bool
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = -jump_height * 250
+	if Input.is_action_just_pressed("jump"):
+		if ((is_on_floor() or ground_ray_cast.is_colliding()) or _coyote_timer > 0):
+			velocity.y = -jump_height * 500
 
 func _process(delta: float) -> void:
 	var mouse_location: Vector2 = get_global_mouse_position()
@@ -42,7 +44,6 @@ func _process(delta: float) -> void:
 	_handle_look_nodes()
 	
 func _physics_process(delta: float) -> void:
-	
 	# Coyote time: refill while grounded, drain once airborne.
 	if is_on_floor():
 		_coyote_timer = coyote_time
@@ -55,7 +56,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Horizontal movement, eased in/out by acceleration.
 	var direction: float = Input.get_axis("move_left", "move_right")
-	velocity.x = move_toward(velocity.x, direction * movement_speed * 100, acceleration * delta)
+	velocity.x = move_toward(velocity.x, direction * movement_speed * 200, acceleration * delta)
 	
 	move_and_slide()
 

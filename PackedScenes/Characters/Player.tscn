@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://k3l6g5h8my8g" path="res://PackedScenes/Characters/player.gd" id="1_nnvau"]
 [ext_resource type="Texture2D" uid="uid://dus126x1aaoqn" path="res://Assets/Sprites/Characters/Player/head_mannequin.png" id="2_nnvau"]
-[ext_resource type="Texture2D" uid="uid://b3k8geew5xtun" path="res://Assets/Sprites/Characters/Player/hand_mannequin_1.png" id="3_cvip7"]
+[ext_resource type="Texture2D" uid="uid://nm80257m3ik0" path="res://Assets/Sprites/Characters/Player/hand_mannequin_1.png" id="3_cvip7"]
 [ext_resource type="Texture2D" uid="uid://b2pt2dnj0f57g" path="res://Assets/Sprites/Characters/Player/hand_mannequin_2.png" id="4_5xufd"]
 [ext_resource type="PackedScene" uid="uid://bsagpigktoe2o" path="res://PackedScenes/Guns/pistol.tscn" id="4_v7ryc"]
 
@@ -59,6 +59,9 @@ metadata/_custom_type_script = "uid://k3l6g5h8my8g"
 position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_g4v7s")
 metadata/_edit_lock_ = true
+
+[node name="GroundRayCast2D" type="RayCast2D" parent="." unique_id=1010186229]
+target_position = Vector2(0, 12)
 
 [node name="Center" type="Marker2D" parent="." unique_id=381725886]
 position = Vector2(0, -15)
