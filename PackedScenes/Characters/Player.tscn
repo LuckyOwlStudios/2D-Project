@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://k3l6g5h8my8g" path="res://PackedScenes/Characters/player.gd" id="1_nnvau"]
 [ext_resource type="Texture2D" uid="uid://dus126x1aaoqn" path="res://Assets/Sprites/Characters/Player/head_mannequin.png" id="2_nnvau"]
+[ext_resource type="Texture2D" uid="uid://b3k8geew5xtun" path="res://Assets/Sprites/Characters/Player/hand_mannequin_1.png" id="3_cvip7"]
+[ext_resource type="Texture2D" uid="uid://b2pt2dnj0f57g" path="res://Assets/Sprites/Characters/Player/hand_mannequin_2.png" id="4_5xufd"]
+[ext_resource type="PackedScene" uid="uid://bsagpigktoe2o" path="res://PackedScenes/Guns/pistol.tscn" id="4_v7ryc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
 radius = 6.0
@@ -9,17 +12,57 @@ radius = 6.0
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yf5fn"]
 size = Vector2(8, 16)
 
+[sub_resource type="Animation" id="Animation_v7ryc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteRoot/Body/HeadSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -12)]
+}
+
+[sub_resource type="Animation" id="Animation_optdf"]
+resource_name = "head_bob"
+length = 1.1333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteRoot/Body/HeadSprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.76666665),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -12), Vector2(0, -10)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w86vg"]
+_data = {
+&"RESET": SubResource("Animation_v7ryc"),
+&"head_bob": SubResource("Animation_optdf")
+}
+
 [node name="Player" type="CharacterBody2D" unique_id=715250926 node_paths=PackedStringArray("look_nodes")]
 script = ExtResource("1_nnvau")
-look_nodes = [NodePath("SpriteRoot/Body/HeadSprite2D")]
+look_nodes = [NodePath("SpriteRoot/Body/HeadSprite2D"), NodePath("SpriteRoot/Body/LeftHandPivot")]
 metadata/_custom_type_script = "uid://k3l6g5h8my8g"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1070317002]
 position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_g4v7s")
+metadata/_edit_lock_ = true
 
 [node name="Center" type="Marker2D" parent="." unique_id=381725886]
 position = Vector2(0, -15)
+metadata/_edit_lock_ = true
 
 [node name="SpriteRoot" type="Node2D" parent="." unique_id=292007718]
 
@@ -31,14 +74,35 @@ texture = SubResource("PlaceholderTexture2D_yf5fn")
 position = Vector2(0, -12)
 texture = ExtResource("2_nnvau")
 
+[node name="LeftHandPivot" type="Node2D" parent="SpriteRoot/Body" unique_id=1719471795]
+position = Vector2(0, -1)
+
+[node name="LeftHand" type="Sprite2D" parent="SpriteRoot/Body/LeftHandPivot" unique_id=1209725233]
+modulate = Color(0.69135684, 0.6913568, 0.69135684, 1)
+position = Vector2(17, -1)
+texture = ExtResource("3_cvip7")
+
+[node name="Pistol" parent="SpriteRoot/Body/LeftHandPivot/LeftHand" unique_id=5866766 instance=ExtResource("4_v7ryc")]
+position = Vector2(5, -3)
+
+[node name="RightHand" type="Sprite2D" parent="SpriteRoot/Body" unique_id=34226947]
+position = Vector2(-8, 3)
+texture = ExtResource("4_5xufd")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=374340496]
 zoom = Vector2(3, 3)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 7.5
+metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1371641255]
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=889368125]
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=39294423]
+libraries/ = SubResource("AnimationLibrary_w86vg")
+autoplay = &"head_bob"

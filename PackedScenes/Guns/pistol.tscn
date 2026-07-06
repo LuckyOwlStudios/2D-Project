@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bsagpigktoe2o"]
+
+[ext_resource type="Script" uid="uid://bwj74xkeeos1i" path="res://PackedScenes/Guns/pistol.gd" id="1_pb564"]
+[ext_resource type="Texture2D" uid="uid://u6jjtftgs8ac" path="res://Assets/Sprites/Objects/Guns/gun_firing_animation_frame1.png" id="2_wempg"]
+[ext_resource type="Texture2D" uid="uid://dhveeoekc2nng" path="res://Assets/Sprites/Objects/Guns/gun_firing_animation_frame2.png" id="3_65i2q"]
+[ext_resource type="Texture2D" uid="uid://pchq7auv01fu" path="res://Assets/Sprites/Objects/Guns/gun_firing_animation_frame3.png" id="4_kckl1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0rga"]
+atlas = ExtResource("2_wempg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kvno"]
+atlas = ExtResource("3_65i2q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cb0xr"]
+atlas = ExtResource("4_kckl1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wempg"]
+atlas = ExtResource("2_wempg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0rga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kvno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cb0xr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wempg")
+}],
+"loop": 0,
+"name": &"shoot",
+"speed": 24.0
+}]
+
+[node name="Pistol" type="Node2D" unique_id=5866766]
+script = ExtResource("1_pb564")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1428241606]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"shoot"
+frame = 3
+frame_progress = 1.0
+
+[node name="BulletSpawnPoint" type="Marker2D" parent="." unique_id=84941907]
+position = Vector2(13, -2)
