@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://23elltl0o3i0"
-path="res://.godot/imported/player.png-96aaae0d5b90e48e72cd9612df36d5a5.ctex"
+uid="uid://v0r1cynixg24"
+path="res://.godot/imported/city-vine-1.png-f0a9afd72b2ec719b09924697c47391a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/Player/player.png"
-dest_files=["res://.godot/imported/player.png-96aaae0d5b90e48e72cd9612df36d5a5.ctex"]
+source_file="res://Assets/Sprites/World/Tileset/Object/city-vine-1.png"
+dest_files=["res://.godot/imported/city-vine-1.png-f0a9afd72b2ec719b09924697c47391a.ctex"]
 
 [params]
 
