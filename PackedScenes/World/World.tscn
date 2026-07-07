@@ -1,13 +1,14 @@
 [gd_scene format=4 uid="uid://bulm60oi6osn7"]
 
 [ext_resource type="Texture2D" uid="uid://dg7rdngmlskgp" path="res://Assets/Sprites/World/Tileset/Object/city-chain 2.png" id="1_5kfr6"]
-[ext_resource type="PackedScene" uid="uid://ctjdjyfi0fqat" path="res://PackedScenes/Characters/Player.tscn" id="1_sqrqn"]
+[ext_resource type="PackedScene" uid="uid://ctjdjyfi0fqat" path="res://PackedScenes/Characters/Player/Player.tscn" id="1_sqrqn"]
 [ext_resource type="Texture2D" uid="uid://v0r1cynixg24" path="res://Assets/Sprites/World/Tileset/Object/city-vine-1.png" id="2_2vqqw"]
 [ext_resource type="Texture2D" uid="uid://bb0l8h8oeaavv" path="res://Assets/Sprites/World/Tileset/Tile/city-tile.png" id="3_l54nm"]
 [ext_resource type="Texture2D" uid="uid://dnfu1n5gplj" path="res://Assets/Sprites/World/Tileset/Object/city-vine-2.png" id="3_nklxw"]
 [ext_resource type="PackedScene" uid="uid://clv70y77i2tq8" path="res://PackedScenes/World/Background.tscn" id="3_thbcr"]
 [ext_resource type="Texture2D" uid="uid://bif8vjbo4suym" path="res://Assets/Sprites/World/Tileset/Tile/city-decor.png" id="4_l54nm"]
 [ext_resource type="Texture2D" uid="uid://d1cjamiqijxiq" path="res://Assets/Sprites/World/Tileset/light.png" id="8_nklxw"]
+[ext_resource type="PackedScene" uid="uid://dtntroae2omeq" path="res://PackedScenes/Characters/Enemy/enemy.tscn" id="9_wmwtf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5kfr6"]
 texture = ExtResource("3_l54nm")
@@ -359,3 +360,6 @@ texture = ExtResource("8_nklxw")
 position = Vector2(130, 93)
 color = Color(0.60624415, 0.69812405, 0.9351618, 1)
 texture = ExtResource("8_nklxw")
+
+[node name="TestEnemy" parent="." unique_id=1604899534 instance=ExtResource("9_wmwtf")]
+position = Vector2(84, -12)

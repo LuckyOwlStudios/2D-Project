@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dtntroae2omeq"]
+
+[ext_resource type="Script" uid="uid://1o6ufs0pbrkm" path="res://PackedScenes/Characters/Enemy/enemy.gd" id="1_ghv5c"]
+[ext_resource type="Script" uid="uid://7wfj6unlo4wy" path="res://health.gd" id="2_x4eh8"]
+[ext_resource type="Script" uid="uid://byewcx4j66pen" path="res://hurt_box.gd" id="2_yikbh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(22, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+
+[node name="TestEnemy" type="CharacterBody2D" unique_id=1604899534]
+collision_layer = 2
+script = ExtResource("1_ghv5c")
+
+[node name="Health" type="Node" parent="." unique_id=1087965102]
+script = ExtResource("2_x4eh8")
+metadata/_custom_type_script = "uid://7wfj6unlo4wy"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=378703295]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 11.0
+offset_bottom = 11.0
+color = Color(0.90325457, 0, 0.31665626, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=316547556]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=2029626567 node_paths=PackedStringArray("health")]
+collision_layer = 0
+script = ExtResource("2_yikbh")
+health = NodePath("../Health")
+metadata/_custom_type_script = "uid://byewcx4j66pen"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1393142193]
+shape = SubResource("RectangleShape2D_yf5fn")
+debug_color = Color(0, 0.61588734, 0.5996301, 0.41960785)

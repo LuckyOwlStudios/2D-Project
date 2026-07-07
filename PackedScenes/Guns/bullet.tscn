@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://j4abn1l7f413" path="res://PackedScenes/Guns/bullet.gd" id="1_u8jni"]
 [ext_resource type="Texture2D" uid="uid://cigj1muw4hi5m" path="res://Assets/Sprites/Objects/Guns/placeholder_bullet.png" id="2_pdrxm"]
+[ext_resource type="Script" uid="uid://cfp4euy4uwpg2" path="res://hit_box.gd" id="3_7ccs6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(4, 3)
@@ -15,6 +16,8 @@ position = Vector2(0, 0.5)
 texture = ExtResource("2_pdrxm")
 
 [node name="HitBox" type="Area2D" parent="." unique_id=684126036]
+collision_mask = 0
+script = ExtResource("3_7ccs6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=973236675]
 shape = SubResource("RectangleShape2D_g4v7s")
