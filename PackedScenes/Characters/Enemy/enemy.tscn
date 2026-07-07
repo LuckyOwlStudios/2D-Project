@@ -9,7 +9,7 @@ size = Vector2(22, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 
-[node name="TestEnemy" type="CharacterBody2D" unique_id=1604899534]
+[node name="Enemy" type="CharacterBody2D" unique_id=1604899534]
 collision_layer = 2
 script = ExtResource("1_ghv5c")
 
