@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://u6jjtftgs8ac" path="res://Assets/Sprites/Objects/Guns/gun_firing_animation_frame1.png" id="2_wempg"]
 [ext_resource type="Texture2D" uid="uid://dhveeoekc2nng" path="res://Assets/Sprites/Objects/Guns/gun_firing_animation_frame2.png" id="3_65i2q"]
 [ext_resource type="Texture2D" uid="uid://pchq7auv01fu" path="res://Assets/Sprites/Objects/Guns/gun_firing_animation_frame3.png" id="4_kckl1"]
+[ext_resource type="AudioStream" uid="uid://7dnl3s2fnoje" path="res://Assets/SoundFX/GunShot.wav" id="5_65i2q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y0rga"]
 atlas = ExtResource("2_wempg")
@@ -52,3 +53,8 @@ frame_progress = 1.0
 
 [node name="BulletSpawnPoint" type="Marker2D" parent="." unique_id=84941907]
 position = Vector2(13, -2)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=161592761]
+stream = ExtResource("5_65i2q")
+volume_db = -10.692
+pitch_scale = 0.63
