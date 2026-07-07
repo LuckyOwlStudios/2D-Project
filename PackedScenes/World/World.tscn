@@ -361,5 +361,5 @@ position = Vector2(130, 93)
 color = Color(0.60624415, 0.69812405, 0.9351618, 1)
 texture = ExtResource("8_nklxw")
 
-[node name="TestEnemy" parent="." unique_id=1604899534 instance=ExtResource("9_wmwtf")]
-position = Vector2(84, -12)
+[node name="Enemy" parent="." unique_id=1604899534 instance=ExtResource("9_wmwtf")]
+position = Vector2(77, -14)
