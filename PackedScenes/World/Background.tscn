@@ -1,10 +1,25 @@
 [gd_scene format=3 uid="uid://clv70y77i2tq8"]
 
-[ext_resource type="Texture2D" uid="uid://kmanj7ixx18a" path="res://Assets/Sprites/World/Tileset/Background/city-background-colored.png" id="1_6hhri"]
+[ext_resource type="Shader" uid="uid://ddj5prbukde3t" path="res://Assets/Shaders/space.gdshader" id="1_7mihm"]
 [ext_resource type="Shader" uid="uid://qlllte25je5a" path="res://Assets/Shaders/planet.gdshader" id="1_wdy25"]
 [ext_resource type="Texture2D" uid="uid://bm6a6o8wic7v1" path="res://Assets/Sprites/World/Background/Planets/Earth/earth_surface_palette.png" id="2_ik0wn"]
 [ext_resource type="Texture2D" uid="uid://dtsy6jdtvoloq" path="res://Assets/Sprites/World/Background/Planets/Earth/earth_cloud_palette.png" id="2_lqfhc"]
 [ext_resource type="Texture2D" uid="uid://dp4aefd2x1jp2" path="res://Assets/Sprites/World/Background/Planets/Earth/earth_atmosphere_palette.png" id="2_yte8d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nklxw"]
+shader = ExtResource("1_7mihm")
+shader_parameter/bg_color = Color(0, 0, 0, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/bigStarSlow = 2.0
+shader_parameter/mediumStarSlow = 6.0
+shader_parameter/smallStarSlow = 8.0
+shader_parameter/smallStarAmount = 0.001
+shader_parameter/mediumStarAmount = 0.005
+shader_parameter/bigStarAmount = 0.01
+shader_parameter/flickerSpeed = 1.0
+shader_parameter/flickerStrength = 0.2
+shader_parameter/smallStarFlickerSpeed = 2.0
+shader_parameter/smallStarFlickerStrength = 0.85
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_6hhri"]
 noise_type = 3
@@ -76,7 +91,7 @@ shader_parameter/shading_noise_cell_amount = 4
 shader_parameter/shading_noise_strength = 0.3
 shader_parameter/shading_noise_period = Vector3(9.5, 9.5, 9.5)
 
-[node name="Control" type="Control" unique_id=316172401]
+[node name="Background" type="Control" unique_id=316172401]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -85,6 +100,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Space" type="ColorRect" parent="." unique_id=1738059257]
+material = SubResource("ShaderMaterial_nklxw")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -92,15 +108,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=773316107]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_6hhri")
 
 [node name="BottomCenter" type="Control" parent="." unique_id=641932406]
 layout_mode = 1
@@ -113,7 +120,6 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Planet" type="ColorRect" parent="BottomCenter" unique_id=1768031431]
-visible = false
 material = SubResource("ShaderMaterial_lqfhc")
 custom_minimum_size = Vector2(10000, 1000)
 layout_mode = 1
