@@ -129,8 +129,38 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -5069.0
-offset_top = -2001.0
+offset_top = -1804.0
 offset_right = 4931.0
-offset_bottom = 6639.0
+offset_bottom = 6836.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="AboveAnchor" type="Control" parent="BottomCenter/Planet" unique_id=651856462]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -2810.0
+offset_right = 20.0
+offset_bottom = -2770.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlanelTitle" type="Label" parent="BottomCenter/Planet/AboveAnchor" unique_id=1160789399]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -47.0
+offset_right = 161.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "-- EARTH --"
