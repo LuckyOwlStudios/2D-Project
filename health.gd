@@ -1,20 +1,16 @@
 class_name Health
 extends Node
 
-
+## When the health of this object reaches zero.
 signal health_depleted
 
+## The maximum health of this object
 @export var max_health : int = 3 
+## The current health of this object
 var current_health : int : set = set_health
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	current_health = max_health
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func set_health(amount: int):
 	current_health = amount
