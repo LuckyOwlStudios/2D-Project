@@ -1,3 +1,27 @@
-# Godot 4+ specific ignores
+# Godot 4+ specific
 .godot/
 /android/
+
+# Godot-specific ignores
+export_presets.cfg
+*.translation
+
+# Imported assets cache (regenerated on import)
+.import/
+
+# Mono/C# (only if using C#)
+.mono/
+data_*/
+mono_crash.*.json
+
+# System / editor junk
+.DS_Store
+Thumbs.db
+*.tmp
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.sln
+*.csproj
