@@ -340,5 +340,5 @@ layer = 100
 script = ExtResource("6_nfdps")
 metadata/_custom_type_script = "uid://ful38t24gd8r"
 
-[node name="TestEnemy" parent="." unique_id=1604899534 instance=ExtResource("9_wmwtf")]
-position = Vector2(84, -12)
+[node name="Enemy" parent="." unique_id=1604899534 instance=ExtResource("9_wmwtf")]
+position = Vector2(77, -14)
