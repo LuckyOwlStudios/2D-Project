@@ -20,9 +20,9 @@ const CROSS = preload("uid://b3hermfjhtm5m")
 @onready var progress_bar: ProgressBar = $CanvasLayer/MouseAnchor/ProgressBar
 
 ## How many shots before needing to reload
-var magazine_size: int = 180
+var magazine_size: int = 24
 ## Shots per second
-var fire_rate: float = 16.0 # Good starter weapon can be 8, better AR will be 12
+var fire_rate: float = 8.0 # Good starter weapon can be 8, better AR will be 12
 var ammo_count: int:
 	set(value):
 		ammo_count = value
