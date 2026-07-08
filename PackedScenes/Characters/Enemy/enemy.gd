@@ -8,7 +8,6 @@ extends CharacterBody2D
 # gets reference to player node in WORLD scene
 @onready var player := $"/root/World/Player"
 
-
 func _ready() -> void:
 	health.health_depleted.connect(queue_free)
 
