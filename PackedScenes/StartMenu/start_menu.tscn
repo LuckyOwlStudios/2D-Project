@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://qtonkgqyyxoo"]
 
-[ext_resource type="Script" uid="uid://c04jndgg2mhqf" path="res://PackedScenes/StartMenu/start_menu.gd" id="1_jwbto"]
-[ext_resource type="Shader" uid="uid://ddj5prbukde3t" path="res://Assets/Shaders/space.gdshader" id="2_v2mkm"]
-[ext_resource type="Texture2D" uid="uid://d1cjamiqijxiq" path="res://Assets/Sprites/World/Tileset/light.png" id="2_vpdu5"]
-[ext_resource type="Texture2D" uid="uid://bif8vjbo4suym" path="res://Assets/Sprites/World/Tileset/Tile/city-decor.png" id="3_v2mkm"]
-[ext_resource type="Texture2D" uid="uid://1icjkchkxshd" path="res://Assets/Sprites/World/Tileset/Background/hell-background-colored.png" id="5_ctwoq"]
+[ext_resource type="Script" uid="uid://c04jndgg2mhqf" path="res://PackedScenes/StartMenu/start_menu.gd" id="1_d531e"]
+[ext_resource type="Shader" uid="uid://ddj5prbukde3t" path="res://Assets/Shaders/space.gdshader" id="2_531jd"]
+[ext_resource type="Texture2D" uid="uid://1icjkchkxshd" path="res://Assets/Sprites/World/Tileset/Background/hell-background-colored.png" id="3_8rtb8"]
+[ext_resource type="Texture2D" uid="uid://d1cjamiqijxiq" path="res://Assets/Sprites/World/Tileset/light.png" id="4_j6eol"]
+[ext_resource type="Texture2D" uid="uid://bif8vjbo4suym" path="res://Assets/Sprites/World/Tileset/Tile/city-decor.png" id="5_j57on"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
-shader = ExtResource("2_v2mkm")
-shader_parameter/bg_color = Color(0, 0, 0, 0.07450981)
+shader = ExtResource("2_531jd")
+shader_parameter/bg_color = Color(0, 0, 0, 1)
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/bigStarSlow = 2.0
 shader_parameter/mediumStarSlow = 6.0
@@ -22,7 +22,7 @@ shader_parameter/smallStarFlickerSpeed = 5.0
 shader_parameter/smallStarFlickerStrength = 0.85
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g4v7s"]
-atlas = ExtResource("3_v2mkm")
+atlas = ExtResource("5_j57on")
 region = Rect2(33.188812, 33.056133, 28.812958, 32.833363)
 
 [node name="StartMenu" type="Control" unique_id=776444798]
@@ -32,7 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_jwbto")
+script = ExtResource("1_d531e")
 starting_light_strength = 0.5
 ending_light_strength = 1.2
 metadata/_edit_lock_ = true
@@ -45,14 +45,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -250.0
+offset_top = -60.0
+offset_right = 250.0
+offset_bottom = 279.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 32
-metadata/_edit_lock_ = true
+theme_override_constants/separation = 48
 
 [node name="GameTitle" type="RichTextLabel" parent="VBoxContainer" unique_id=1121679925]
 layout_mode = 2
@@ -89,7 +88,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_ctwoq")
+texture = ExtResource("3_8rtb8")
 
 [node name="Control" type="Control" parent="." unique_id=2034918401]
 layout_mode = 1
@@ -97,9 +96,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -24.0
-offset_top = 264.0
+offset_top = 320.0
 offset_right = 24.0
-offset_bottom = 312.0
+offset_bottom = 368.0
 grow_horizontal = 2
 
 [node name="BeaconLight" type="Sprite2D" parent="Control" unique_id=996240218]
@@ -108,7 +107,7 @@ modulate = Color(1, 0.54901963, 0.1882353, 0.5882353)
 z_index = 1
 position = Vector2(22.000011, -56)
 scale = Vector2(1.0333335, 1)
-texture = ExtResource("2_vpdu5")
+texture = ExtResource("4_j6eol")
 
 [node name="Beacon" type="TextureRect" parent="Control" unique_id=660950908]
 z_index = 1
