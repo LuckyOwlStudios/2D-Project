@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://rrusk1h57vwq"]
+
+[ext_resource type="Script" uid="uid://cd7cbmrnsngms" path="res://testing/testing_enemy/test_enemy.gd" id="1_gym66"]
+[ext_resource type="Script" uid="uid://7wfj6unlo4wy" path="res://health.gd" id="2_kb1pc"]
+[ext_resource type="Script" uid="uid://byewcx4j66pen" path="res://hurt_box.gd" id="3_bs6ls"]
+[ext_resource type="Texture2D" uid="uid://cprrrffusct0e" path="res://testing/testing_enemy/Training Dummy Sprite Sheet.png" id="4_4ssg6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kckl1"]
+radius = 11.0
+height = 22.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4v7s"]
+atlas = ExtResource("4_4ssg6")
+region = Rect2(97.43764, -0.1471138, 29.791973, 30.142471)
+
+[node name="TestEnemy" type="CharacterBody2D" unique_id=1604899534]
+collision_layer = 2
+script = ExtResource("1_gym66")
+
+[node name="Health" type="Node" parent="." unique_id=1087965102]
+script = ExtResource("2_kb1pc")
+metadata/_custom_type_script = "uid://7wfj6unlo4wy"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=378703295]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 11.0
+offset_bottom = 11.0
+color = Color(0.90325457, 0, 0.31665626, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=316547556]
+shape = SubResource("CapsuleShape2D_kckl1")
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=2029626567 node_paths=PackedStringArray("health")]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("3_bs6ls")
+health = NodePath("../Health")
+metadata/_custom_type_script = "uid://byewcx4j66pen"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1393142193]
+shape = SubResource("RectangleShape2D_yf5fn")
+debug_color = Color(0, 0.61588734, 0.5996301, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=458694431]
+scale = Vector2(-1.1330335, 1.1330335)
+texture = SubResource("AtlasTexture_g4v7s")
+
+[node name="LineOfSight" type="RayCast2D" parent="Sprite2D" unique_id=471371818]
+rotation = 3.1415927
+scale = Vector2(0.8825864, -0.8825864)
+target_position = Vector2(56, 0)
