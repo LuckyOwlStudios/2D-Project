@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bb0l8h8oeaavv" path="res://Assets/Sprites/World/Tileset/Tile/city-tile.png" id="3_l54nm"]
 [ext_resource type="PackedScene" uid="uid://clv70y77i2tq8" path="res://PackedScenes/World/Background.tscn" id="3_thbcr"]
 [ext_resource type="Texture2D" uid="uid://bif8vjbo4suym" path="res://Assets/Sprites/World/Tileset/Tile/city-decor.png" id="4_l54nm"]
+[ext_resource type="PackedScene" uid="uid://dd8m846pptuj7" path="res://PackedScenes/PauseMenu/pause_menu.tscn" id="7_2vqqw"]
 [ext_resource type="PackedScene" uid="uid://dtntroae2omeq" path="res://PackedScenes/Characters/Enemy/enemy.tscn" id="9_wmwtf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5kfr6"]
@@ -336,3 +337,14 @@ layer = 100
 
 [node name="Enemy" parent="." unique_id=1604899534 instance=ExtResource("9_wmwtf")]
 position = Vector2(77, -14)
+
+[node name="CanvasGroup" type="CanvasLayer" parent="." unique_id=949007109]
+
+[node name="PauseMenu" parent="CanvasGroup" unique_id=1551951812 instance=ExtResource("7_2vqqw")]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5

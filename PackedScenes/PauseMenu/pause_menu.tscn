@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dd8m846pptuj7"]
+
+[ext_resource type="Theme" uid="uid://c7h1mo772rro5" path="res://PackedScenes/PauseMenu/pause_menu_theme.tres" id="1_t2g23"]
+[ext_resource type="Script" uid="uid://cs16i5oekgb1k" path="res://PackedScenes/PauseMenu/pause_menu.gd" id="2_7ur4e"]
+
+[node name="PauseMenu" type="Control" unique_id=1551951812]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_t2g23")
+script = ExtResource("2_7ur4e")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=589356236]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -148.0
+offset_right = 176.0
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseUI" type="VBoxContainer" parent="PanelContainer" unique_id=1010294877]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/PauseUI" unique_id=2134921080]
+layout_mode = 2
+text = "PAUSED"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="ButtonContainer" type="VBoxContainer" parent="PanelContainer/PauseUI" unique_id=1837500763]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="ResumeButton" type="Button" parent="PanelContainer/PauseUI/ButtonContainer" unique_id=1964676512]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+custom_maximum_size = Vector2(150, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Resume"
+
+[node name="QuitButton" type="Button" parent="PanelContainer/PauseUI/ButtonContainer" unique_id=885615558]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+custom_maximum_size = Vector2(150, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Quit"
