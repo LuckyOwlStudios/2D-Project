@@ -57,7 +57,7 @@ func _input(event: InputEvent) -> void:
 
 func _fire():
 	_cooldown = 1.0 / fire_rate
-	animated_sprite_2d.play("shoot")
+	animated_sprite_2d.play("test_shoot")
 	ray_cast.look_at(get_global_mouse_position())
 	ray_cast.rotation += deg_to_rad(randf_range(-spread, spread))
 	node_path_to_world.add_child(BulletTrail.create(bullet_spawn_point.global_position, ray_cast.get_collision_point(), Color(18.892, 8.187, 0.0, 1.0), 2))

@@ -24,6 +24,18 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("2_wempg")
 region = Rect2(0, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kckl1"]
+atlas = ExtResource("2_wempg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tqfq"]
+atlas = ExtResource("4_kckl1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywy6s"]
+atlas = ExtResource("2_wempg")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
 "frames": [{
@@ -42,6 +54,20 @@ animations = [{
 "loop": 0,
 "name": &"shoot",
 "speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kckl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tqfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywy6s")
+}],
+"loop": 0,
+"name": &"test_shoot",
+"speed": 14.0
 }]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
@@ -55,9 +81,7 @@ script = ExtResource("1_pb564")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1428241606]
 sprite_frames = SubResource("SpriteFrames_g4v7s")
-animation = &"shoot"
-frame = 3
-frame_progress = 1.0
+animation = &"test_shoot"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=161592761]
 stream = ExtResource("6_kckl1")
