@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b38q7dxpjgegx"]
 
 [ext_resource type="PackedScene" uid="uid://rrusk1h57vwq" path="res://testing/testing_enemy/test_enemy.tscn" id="1_h1wh1"]
+[ext_resource type="Script" uid="uid://dy1tgy3me6t3x" path="res://testing/test_world.gd" id="1_shq2n"]
 [ext_resource type="PackedScene" uid="uid://bm480c0kt4kcf" path="res://testing/testing_player/test_player.tscn" id="2_s77o8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g4v7s"]
@@ -8,6 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 
 [node name="TestWorld" type="Node2D" unique_id=845026066]
+script = ExtResource("1_shq2n")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1122567112]
 
@@ -15,18 +17,45 @@
 position = Vector2(0, 108)
 shape = SubResource("WorldBoundaryShape2D_g4v7s")
 
+[node name="Side boundaries" type="StaticBody2D" parent="." unique_id=1265770225]
+position = Vector2(-404, 0)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Side boundaries" unique_id=1543558996]
+position = Vector2(-2.0981465e-06, 60)
+shape = SubResource("WorldBoundaryShape2D_g4v7s")
+
+[node name="Side boundaries2" type="StaticBody2D" parent="." unique_id=1305084047]
+position = Vector2(358, 0)
+rotation = 1.5707964
+scale = Vector2(-1, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Side boundaries2" unique_id=845015209]
+position = Vector2(0, 108)
+shape = SubResource("WorldBoundaryShape2D_g4v7s")
+
 [node name="TestEnemy" parent="." unique_id=1604899534 instance=ExtResource("1_h1wh1")]
-position = Vector2(100, 67)
+position = Vector2(61, 94)
 
 [node name="TestPlayer" parent="." unique_id=1414808879 instance=ExtResource("2_s77o8")]
-position = Vector2(-85, 68)
+position = Vector2(-1, 50)
+collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=78560825]
-zoom = Vector2(2.57, 2.57)
+zoom = Vector2(2.07, 2.07)
 metadata/_edit_lock_ = true
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=356987441]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=48244023]
-position = Vector2(145, 67)
+position = Vector2(116, 13)
 shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Label" type="Label" parent="." unique_id=444072107]
+offset_left = -445.0
+offset_top = -235.0
+offset_right = -204.0
+offset_bottom = -114.0
+text = "Press shift: move down
+Press Space: move up
+Press Enter: Spawn Enemy on mouse cursor"

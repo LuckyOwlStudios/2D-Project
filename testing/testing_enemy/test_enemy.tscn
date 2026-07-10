@@ -19,6 +19,7 @@ region = Rect2(97.43764, -0.1471138, 29.791973, 30.142471)
 [node name="TestEnemy" type="CharacterBody2D" unique_id=1604899534]
 collision_layer = 2
 script = ExtResource("1_gym66")
+acceleration = 100.0
 
 [node name="Health" type="Node" parent="." unique_id=1087965102]
 script = ExtResource("2_kb1pc")
@@ -46,10 +47,18 @@ shape = SubResource("RectangleShape2D_yf5fn")
 debug_color = Color(0, 0.61588734, 0.5996301, 0.41960785)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=458694431]
+position = Vector2(0, -3)
 scale = Vector2(-1.1330335, 1.1330335)
 texture = SubResource("AtlasTexture_g4v7s")
 
 [node name="LineOfSight" type="RayCast2D" parent="Sprite2D" unique_id=471371818]
 rotation = 3.1415927
 scale = Vector2(0.8825864, -0.8825864)
-target_position = Vector2(56, 0)
+target_position = Vector2(150, 0)
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=521288325]
+offset_left = -26.0
+offset_top = -49.0
+offset_right = 26.0
+offset_bottom = -22.0
+value = 100.0

@@ -5,7 +5,21 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
 
 [node name="TestPlayer" type="CharacterBody2D" unique_id=1414808879]
+collision_mask = 2
 script = ExtResource("1_k20bv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=550701043]
 shape = SubResource("CapsuleShape2D_g4v7s")
+
+[node name="Label" type="Label" parent="." unique_id=589987738]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -27.0
+offset_top = -28.0
+offset_right = 28.0
+offset_bottom = -17.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 8
+text = "TestPLayer"
