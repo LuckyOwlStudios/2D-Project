@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://rrusk1h57vwq" path="res://testing/testing_enemy/test_enemy.tscn" id="1_h1wh1"]
 [ext_resource type="Script" uid="uid://dy1tgy3me6t3x" path="res://testing/test_world.gd" id="1_shq2n"]
 [ext_resource type="PackedScene" uid="uid://bm480c0kt4kcf" path="res://testing/testing_player/test_player.tscn" id="2_s77o8"]
+[ext_resource type="PackedScene" uid="uid://caumbdqkg2avd" path="res://PackedScenes/Characters/Player/Player.tscn" id="5_42bjw"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g4v7s"]
 
@@ -46,6 +47,8 @@ zoom = Vector2(2.07, 2.07)
 metadata/_edit_lock_ = true
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=356987441]
+collision_layer = 4
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=48244023]
 position = Vector2(116, 13)
@@ -56,6 +59,9 @@ offset_left = -445.0
 offset_top = -235.0
 offset_right = -204.0
 offset_bottom = -114.0
-text = "Press shift: move down
-Press Space: move up
+text = "Press shift: move testplayer down
+Press Space: move testplayer up
 Press Enter: Spawn Enemy on mouse cursor"
+
+[node name="Player" parent="." unique_id=715250926 instance=ExtResource("5_42bjw")]
+position = Vector2(-267, 89)

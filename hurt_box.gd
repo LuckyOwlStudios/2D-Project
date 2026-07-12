@@ -5,6 +5,12 @@ signal damaged(amount: float)
 
 @export var health : Health
 
+
 func damage(amount: float):
 	if health:
 		health.current_health -= amount
+		
+func damage_from_ray():
+	if health:
+		health.current_health -= 1
+		damaged.emit()

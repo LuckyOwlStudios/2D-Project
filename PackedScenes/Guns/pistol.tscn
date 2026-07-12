@@ -94,6 +94,7 @@ position = Vector2(10, -2)
 [node name="RayCast2D" type="RayCast2D" parent="BulletSpawnPoint" unique_id=2093873053]
 target_position = Vector2(500, -2)
 collision_mask = 3
+collide_with_areas = true
 
 [node name="FlashPointLight2D" type="PointLight2D" parent="BulletSpawnPoint" unique_id=1598309508]
 scale = Vector2(1.177778, 1.177778)

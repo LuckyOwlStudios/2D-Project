@@ -1,3 +1,4 @@
+class_name TestPlayer
 extends CharacterBody2D
 
 

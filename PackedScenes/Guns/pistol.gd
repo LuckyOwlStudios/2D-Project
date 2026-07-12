@@ -9,7 +9,7 @@ const CROSS = preload("uid://b3hermfjhtm5m")
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var bullet_spawn_point: Marker2D = $BulletSpawnPoint
-@onready var node_path_to_world := get_node("/root/World")
+@onready var node_path_to_world := get_node("/root/TestWorld")
 @onready var ray_cast: RayCast2D = $BulletSpawnPoint/RayCast2D
 @onready var flash_point_light: PointLight2D = $BulletSpawnPoint/FlashPointLight2D
 @onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
@@ -92,5 +92,10 @@ func _flash() -> void:
 func _handle_hit():
 	if ray_cast.is_colliding():
 		var collider := ray_cast.get_collider()
+		#if collider is HurtBox:
+		#	collider.damage(1.0)
 		if collider is HurtBox:
-			collider.damage(1)
+			if collider.has_method("damage_from_ray"):
+				collider.damage_from_ray()
+			
+		
